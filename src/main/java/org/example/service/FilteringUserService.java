@@ -6,12 +6,12 @@ import java.util.List;
 import java.util.Set;
 import org.example.model.User;
 
-public class FilterUserParametersService {
+public class FilteringUserService {
     private static final int MIN_REPUTATION = 223;
     private static final int MIN_ANSWERS = 1;
     private static final Set<String> LOCATION_LIST = Set.of("romania", "moldova");
 
-    public List<User> doFilter(List<User> inputUserList) {
+    public List<User> doFilterForUsers(List<User> inputUserList) {
         List<User> output = new ArrayList<>();
         for (User user : inputUserList) {
             if (doFilterLocation(user) && doFilterReputation(user) && doFilterAnswers(user)) {

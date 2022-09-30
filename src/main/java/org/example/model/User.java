@@ -106,7 +106,7 @@ public class User {
                 + ", reputation=" + reputation
                 + ", linkProfile='" + linkProfile + '\''
                 + ", linkAvatar='" + linkAvatar + '\''
-                + ", tags='" + tagsString.substring(0, 100)
+                + ", tags='" + tagsString.substring(0, 200) + "...'"
                 + '}';
     }
 }

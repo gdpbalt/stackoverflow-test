@@ -20,5 +20,5 @@ public interface StackOverflowApi {
 
     @GET("/users/{id}/top-tags?pagesize=100&site=stackoverflow"
             + "&filter=" + TAG_FILTER_NAME + "&key=" + API_KEY)
-    Call<ListWrapper<Tag>> getTags(@Path("id") long id, @Query("page") int pageId);
+    Call<ListWrapper<Tag>> getTags(@Path("id") long id);
 }
