@@ -15,13 +15,13 @@ public class FetchingUserService {
     private final FetchingTagService fetchUserTagsService;
     private final FilteringTagService filterTagParametersService;
     private final FilteringUserService filterUserParametersService;
-    private final GettingApiPageService gettingApiPageService;
+    private final GettingOneApiPageService gettingApiPageService;
 
     public FetchingUserService(StackOverflowApi api,
                                FetchingTagService fetchUserTagsService,
                                FilteringUserService filterUserParametersService,
                                FilteringTagService filterTagParametersService,
-                               GettingApiPageService gettingApiPageService) {
+                               GettingOneApiPageService gettingApiPageService) {
         this.api = api;
         this.fetchUserTagsService = fetchUserTagsService;
         this.filterTagParametersService = filterTagParametersService;
@@ -33,7 +33,7 @@ public class FetchingUserService {
         for (int page = START_PAGE; page <= FINISH_PAGE; page++) {
             Call<ListWrapper<User>> usersRequest = api.getUsers(page);
             try {
-                ListWrapper<User> body = gettingApiPageService.getPage(usersRequest, page);
+                ListWrapper<User> body = gettingApiPageService.getOnePage(usersRequest, page);
                 if (body == null) {
                     throw new EmptyResponseException("API didn't get any information");
                 }

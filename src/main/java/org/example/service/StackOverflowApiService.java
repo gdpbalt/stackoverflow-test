@@ -6,10 +6,10 @@ import org.example.util.StackOverflowApi;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
-public class StackOverflowService {
+public class StackOverflowApiService {
     private static StackOverflowApi api;
 
-    private StackOverflowService() {
+    private StackOverflowApiService() {
     }
 
     public static synchronized StackOverflowApi getStackOverflowApi() {

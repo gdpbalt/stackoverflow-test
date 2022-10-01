@@ -5,6 +5,8 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 public class User {
+    static final int SHOW_TAGS_LENGTH = 300;
+
     @SerializedName("user_id")
     private Long userId;
     @SerializedName("display_name")
@@ -106,7 +108,7 @@ public class User {
                 + ", reputation=" + reputation
                 + ", linkProfile='" + linkProfile + '\''
                 + ", linkAvatar='" + linkAvatar + '\''
-                + ", tags='" + tagsString.substring(0, 200) + "...'"
+                + ", tags='" + tagsString.substring(0, SHOW_TAGS_LENGTH) + "...'"
                 + '}';
     }
 }

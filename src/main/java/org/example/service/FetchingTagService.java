@@ -10,9 +10,10 @@ import retrofit2.Call;
 
 public class FetchingTagService {
     private final StackOverflowApi api;
-    private final GettingApiPageService gettingApiPageService;
+    private final GettingOneApiPageService gettingApiPageService;
 
-    public FetchingTagService(StackOverflowApi api, GettingApiPageService gettingApiPageService) {
+    public FetchingTagService(StackOverflowApi api,
+                              GettingOneApiPageService gettingApiPageService) {
         this.api = api;
         this.gettingApiPageService = gettingApiPageService;
     }
@@ -21,7 +22,7 @@ public class FetchingTagService {
         List<Tag> userTags = null;
         Call<ListWrapper<Tag>> tagsRequest = api.getTags(userId);
         try {
-            ListWrapper<Tag> body = gettingApiPageService.getPage(tagsRequest, 1);
+            ListWrapper<Tag> body = gettingApiPageService.getOnePage(tagsRequest, 1);
             if (body == null) {
                 throw new EmptyResponseException("API didn't get any information");
             }

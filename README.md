@@ -1,8 +1,8 @@
-# stackoverflow-test
+# stackoverflow-api-test
 
 ### Project description
-This is a simple application for working with stackoverflow API and retrieves information about 
-user's accounts and user's tags according to task.
+This is a simple console application for working with stackoverflow API and retrieves information about 
+accounts of users and user's tags according to task.
 
 ### Features
 The application shows users according to next requirements:
@@ -11,7 +11,12 @@ The application shows users according to next requirements:
 - Answered min 1 question
 - Have the tags: "java",".net","docker" or "C#"
 
-The application uses API key from site stackoverflow, because free version is limited for requests.
+The application uses API key from site stackoverflow, because free version is limited for numbers of requests.
+
+As this is the application for a test purpose I set limit to requests about users:
+- start page number: 3;
+- end page number: 28.
+Those values may be changed via constants in the code. 
 
 
 ### Technologies used in project
@@ -28,3 +33,5 @@ The application uses API key from site stackoverflow, because free version is li
 
 3. Build and run project via docker. Go to the project directory and run in terminal:
    > docker build -t stackoverflow . && docker run -it stackoverflow
+
+Also, you can run this application in different ways. For instance via IDE Intellij Idea.
